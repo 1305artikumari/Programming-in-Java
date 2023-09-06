@@ -1,0 +1,44 @@
+public class Solution{
+    static boolean checkshp(int no)
+    {
+        int sum=0;
+        while(no!=0)
+        {
+           int d=no%10;
+           sum=sum+d;
+           no=no/10;
+        }
+        if(sum%5==0)
+        {
+           return true; 
+        }
+        return false;
+    }
+    static int[] printSharpnee(int n)
+    {
+        int a[]=new int[n];
+        int no=1;
+        int count=0;
+        while(count<n)
+        {
+        if(checkshp(no))
+        {
+          a[count]=no; 
+          count++;
+        }
+        no++;
+        }
+  
+        return a;
+    }
+
+     public static void main(String []args){
+         int n=10;
+          int arr[]=printSharpnee(n);
+          for(int i=0;i<n;i++)
+          {
+              System.out.println(arr[i]);
+          }
+        
+     }
+}
